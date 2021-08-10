@@ -52,7 +52,7 @@ function moveBack() {
   }
 }
 
-//actual movement logic
+//actual movement logic handler
 function journey () {
   
   startJourney()
