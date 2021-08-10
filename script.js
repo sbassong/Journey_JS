@@ -1,10 +1,10 @@
 const base = document.querySelector('.base')
 const hero = document.querySelector('.hero')
 
-
-
+const die = document.querySelector('.die')
+const startButton = document.querySelector('.button')
 const messageDiv = document.querySelector('.message')
-const p1 = document.querySelector('#1')
+const p1 = document.getElementById('1')
 
 //game state
 let heroPosition = hero.parentElement.id
@@ -18,8 +18,6 @@ function throwDie () {
 }
 
 function startJourney() {
-  throwDie()
-  console.log(dieVal)
   
   if (dieVal === 6) {
     let child = base.removeChild(hero)
@@ -33,7 +31,7 @@ function startJourney() {
 //moveForward
 function moveForward(dieVal) {
   let curPosition = hero.parentElement
-  let nextPosition = document.getElementById(`${curPosition.id + dieVal}`)
+  let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
   let child = curPosition.removeChild(hero)
   nextPosition.appendChild(child)
   heroPosition = nextPosition.id
@@ -45,6 +43,7 @@ function moveBack() {
     let newPosition = document.getElementById(`${heroPosition - 3}`)
     newPosition.appendChild(child)
     heroPosition = newPosition.id
+    
   } else {
     let child = document.getElementById(heroPosition).removeChild(hero)
     base.appendChild(child)
@@ -54,7 +53,29 @@ function moveBack() {
 
 //actual movement logic handler
 function journey () {
-  
-  startJourney()
-  console.log(heroPosition)
+  throwDie()
+  if (heroPosition === base.id || !gameActive ) {
+    startJourney()
+  } else {
+    if (dieVal === 3) {
+    moveBack()
+    } else {
+    moveForward(dieVal)
+    }
+  }
 }
+
+
+
+//event listeners
+startButton.addEventListener('click', function() {
+  heroPosition = ''
+  gameActive = false
+  dieVal = 0
+  base.appendChild(hero)
+})
+
+
+die.addEventListener('click', function() {
+  journey()
+})
