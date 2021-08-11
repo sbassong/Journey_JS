@@ -3,7 +3,7 @@ const home = document.querySelector('.home')
 const hero = document.querySelector('.hero')
 
 const die = document.querySelector('.die')
-const startButton = document.querySelector('.button')
+const startButton = document.querySelector('.new-game-button')
 const messageDiv = document.querySelector('.message')
 const p1 = document.getElementById('1')
 

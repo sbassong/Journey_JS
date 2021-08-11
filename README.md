@@ -48,4 +48,5 @@
 #### pictures: [DuckDuckGo Search](http://www.duckduckgo.com)
 
 #### Die animation: [ClipArt](http://www.clipartbest.com/clipart-acq6e87oi)
+#### Background: [Wallpapersden](https://wallpapersden.com/desert-sun-day-minimalism-wallpaper/3840x2400/)
 #### Future Credits:
