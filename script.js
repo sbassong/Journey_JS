@@ -42,23 +42,6 @@ function resetJourney() {
 }
 
 //movements
-//moveForward
-function moveForward(dieVal) {
-  if (!gameActive) {
-    return
-  } else {
-    if (hero.parentElement.id < 33) {
-      let curPosition = hero.parentElement
-      let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
-      let child = curPosition.removeChild(hero)
-      nextPosition.appendChild(child)
-      heroPosition = nextPosition.id
-      messageDiv.innerText = `You move forward ${dieVal} tiles. Keep it up!`
-    } else {
-      moveHome()
-    }
-  }
-}
 //moveBack
 function moveBack() {
   if (!gameActive) {
@@ -78,6 +61,25 @@ function moveBack() {
     }
   }  
 }
+
+//moveForward
+function moveForward(dieVal) {
+  if (!gameActive) {
+    return
+  } else {
+    if (hero.parentElement.id < 33) {
+      let curPosition = hero.parentElement
+      let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
+      let child = curPosition.removeChild(hero)
+      nextPosition.appendChild(child)
+      heroPosition = nextPosition.id
+      messageDiv.innerText = `You move forward ${dieVal} tiles. Keep it up!`
+    } else {
+      moveHome()
+    }
+  }
+}
+
 //moveHome which handles cases where the hero is 6 tiles away from home.
 function moveHome() {
   console.log(heroPosition)
@@ -111,6 +113,8 @@ function moveHome() {
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+  } else {
+    return
   }
 }
 
