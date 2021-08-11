@@ -52,6 +52,10 @@ body {
             width: 200px
           }
           
+          .message {
+            width: auto;
+          }
+          
           img {
             height: 250px;
             width: 250px;
