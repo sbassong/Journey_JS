@@ -8,7 +8,7 @@ const messageDiv = document.querySelector('.message')
 const p1 = document.getElementById('1')
 
 //game state
-let heroPosition = hero.parentElement.id
+let heroPosition = base.id
 let gameActive = false
 let dieVal = 0
 

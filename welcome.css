@@ -1,6 +1,14 @@
 body {
-  background-color: rgb(202, 164, 236);
+  height: 100vh;
+  background-image: url('theme_images/welcome-img.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   font-family: 'Sacramento', cursive;
-  margin: 10px;
-  display:inline-block;
+}
+
+.background {
+  height: 100%;
+
 }
