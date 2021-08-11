@@ -1,4 +1,5 @@
 const base = document.querySelector('.base')
+const home = document.querySelector('.home')
 const hero = document.querySelector('.hero')
 
 const die = document.querySelector('.die')
@@ -19,7 +20,7 @@ function throwDie () {
 
 //startJourney which handles getting the hero moving on the path
 function startJourney() {
-  if (dieVal === 6) {
+    if (dieVal === 6) {
     let child = base.removeChild(hero)
     p1.appendChild(child)
     heroPosition = p1.id
@@ -43,12 +44,17 @@ function resetJourney() {
 //movements
 //moveForward
 function moveForward(dieVal) {
-  let curPosition = hero.parentElement
-  let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
-  let child = curPosition.removeChild(hero)
-  nextPosition.appendChild(child)
-  heroPosition = nextPosition.id
-  messageDiv.innerText = `You move forward ${dieVal} tiles. Keep it up!`
+  if (!gameActive) {
+    return
+  } else {
+    let curPosition = hero.parentElement
+    let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
+    let child = curPosition.removeChild(hero)
+    nextPosition.appendChild(child)
+    heroPosition = nextPosition.id
+    messageDiv.innerText = `You move forward ${dieVal} tiles. Keep it up!`
+  }
+  
 }
 //moveBack
 function moveBack() {
@@ -66,13 +72,47 @@ function moveBack() {
     messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
   }
 }
-
+//moveHome
+function moveHome() {
+  if (heroPosition < 33) {
+    return
+  } else {
+    if (heroPosition === 33 && dieVal === 6) {
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    } else if (heroPosition === 34 && dieVal === 5) {
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    } else if (heroPosition === 35 && dieVal === 4) {
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    } else if (heroPosition === 36 && dieVal === 3) {
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    } else if (heroPosition === 37 && dieVal === 2) {
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    } else if (heroPosition === 38 && dieVal === 1){
+      let child = document.getElementById(heroPosition).removeChild(hero)
+      home.appendChild(child)
+      heroPosition = home.id
+    }
+    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+    
+  }
+}
 
 
 //actual movement logic handler
 function journey () {
   throwDie()
-  if (heroPosition === base.id || !gameActive ) {
+
+  if (heroPosition === base.id && !gameActive ) {
     startJourney()
   } else {
     if (dieVal === 3) {
