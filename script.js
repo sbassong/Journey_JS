@@ -82,46 +82,49 @@ function moveForward(dieVal) {
 
 //moveHome which handles cases where the hero is 6 tiles away from home.
 function moveHome() {
-  console.log(heroPosition)
-  console.log(dieVal)
   if (heroPosition >= 33 && dieVal === 6) {
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
-  } else if (heroPosition >= 34 && dieVal === 5) {
+  } else if (heroPosition >= 34 && dieVal >= 5) {
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
-  } else if (heroPosition >= 35 && (dieVal === 4)) {
+  } else if (heroPosition >= 35 && (dieVal >= 4)) {
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
-  } else if (heroPosition >= 36 && dieVal === 3) {
+  } else if (heroPosition >= 36 && dieVal >= 3) {
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
-  } else if (heroPosition >= 37 && dieVal === 2) {
+  } else if (heroPosition >= 37 && dieVal >= 2) {
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
-  } else if (heroPosition >= 38 && dieVal === 1){
+  } else if (heroPosition >= 38 && dieVal >= 1){
     let child = document.getElementById(heroPosition).removeChild(hero)
     home.appendChild(child)
     heroPosition = home.id
     messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
     gameActive = false
   } else {
-    return
+    let curPosition = hero.parentElement
+    let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
+    let child = curPosition.removeChild(hero)
+    nextPosition.appendChild(child)
+    heroPosition = nextPosition.id
+    messageDiv.innerText = `You move forward ${dieVal} tiles. Almost there!`
   }
 }
 
@@ -139,7 +142,6 @@ function journey () {
     moveForward(dieVal)
     }
   }
-  // checkWin()
 }
 
 
