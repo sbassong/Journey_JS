@@ -20,16 +20,16 @@ body {
   .welcome-menu {
     border: 5px solid black;
     border-radius: 12.5px;
-    width: 50%;
-    margin: 0 auto;
+    width: 60%;
+    margin: 50px auto;
     padding: 0 10px;
   }
 
     .parent-p {
-      font-size: 30px;
+      font-size: 40px;
     }
       p {
-        font-size: 25px;
+        font-size: 35px;
       }
     
     .start-game {

@@ -69,37 +69,37 @@ function moveForward(dieVal) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else if (heroPosition >= 34 && dieVal >= 5) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else if (heroPosition >= 35 && dieVal >= 4) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else if (heroPosition >= 36 && dieVal >= 3) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else if (heroPosition >= 37 && dieVal >= 2) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else if (heroPosition >= 38 && dieVal >= 1){
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
-        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
       } else {
         let curPosition = hero.parentElement
@@ -148,7 +148,7 @@ function makePits () {
   pit.appendChild (sandPit)
   })
 }
-//fallIn function => if hero steps on pit, they are sent back to base
+//fallIn function which sends hero to base when they step on pit.
 function fallIn () {
   if (!hero.parentElement.classList.contains('pit')) {
     return
@@ -161,9 +161,7 @@ function fallIn () {
   }
 }
 
-//unlock ending
-// if heroPosition = home.id, gameActive = false,
-//e.target.innerHTML = gfdg
+//unlock ending, sends winning hero to epilogue's page
 function unlockEnd (e) {
   if (heroPosition === home.id && !gameActive) {
     let target = e.target
