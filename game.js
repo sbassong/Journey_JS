@@ -3,6 +3,7 @@ const base = document.querySelector('.base')
 const home = document.querySelector('.home')
 const hero = document.querySelector('.hero')
 
+const pits = document.querySelectorAll('.pit')
 const die = document.querySelector('.die')
 const startButton = document.querySelector('.new-game-button')
 const messageDiv = document.querySelector('.message')
@@ -44,24 +45,19 @@ function resetJourney() {
 //movements
   //moveBack
 function moveBack() {
-  if (!gameActive) {
-    return
+  if (heroPosition > 3) {
+    let child = document.getElementById(heroPosition).removeChild(hero)
+    let newPosition = document.getElementById(`${heroPosition - 3}`)
+    newPosition.appendChild(child)
+    heroPosition = newPosition.id
+    messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back ${dieVal} tiles. don't give up!`
   } else {
-    if (heroPosition > 3) {
-      let child = document.getElementById(heroPosition).removeChild(hero)
-      let newPosition = document.getElementById(`${heroPosition - 3}`)
-      newPosition.appendChild(child)
-      heroPosition = newPosition.id
-      messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back ${dieVal} tiles. don't give up!`
-    } else {
-      let child = document.getElementById(heroPosition).removeChild(hero)
-      base.appendChild(child)
-      heroPosition = base.id
-      gameActive = false
-      messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
-
-    }
-  }  
+    let child = document.getElementById(heroPosition).removeChild(hero)
+    base.appendChild(child)
+    heroPosition = base.id
+    gameActive = false
+    messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
+  }
 }
 
   //moveForward
@@ -133,18 +129,38 @@ function journey () {
     startJourney()
   } else {
     if (dieVal === 3) {
+    fallIn()
     moveBack()
     } else {
+    fallIn()
     moveForward(dieVal)
     }
   }
 }
 
-//sand pit trap idea
-//want to generate 3ish trap on 3 divs
-// if hero steps on trap, they have to throw a six to get out
-// they get 3 tries, otherwise they get sent home
 
+//sand pit mechanic
+//want to generate 3ish trap on 3 divs
+function makePits () {
+  pits.forEach( pit => {
+  const sandPit = document.createElement('img')
+  sandPit.className = 'pit-img'
+  sandPit.src = '/Users/Sam/ga_seir/projects/Journey_JS/theme_images/pit_trap.jpeg'
+  pit.appendChild (sandPit)
+  })
+}
+//fallIn function => if hero steps on pit, they are sent back to base
+function fallIn () {
+  if (!hero.parentElement.classList.contains('pit')) {
+    return
+  } else {
+    let child = document.getElementById(hero.parentElement.id).removeChild(hero)
+    base.appendChild(child)
+    heroPosition = base.id
+    gameActive = false
+    messageDiv.innerText = `Ouch, you fell in a pit and found yourself to base. Roll the magic number to get out.`
+  }
+}
 
 //event listeners
 startButton.addEventListener('click', function() {
@@ -153,4 +169,9 @@ startButton.addEventListener('click', function() {
 
 die.addEventListener('click', function() {
   journey()
+  fallIn()
+})
+
+window.addEventListener('DOMContentLoaded', function() {
+  makePits()
 })
