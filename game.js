@@ -1,3 +1,4 @@
+//global variables
 const base = document.querySelector('.base')
 const home = document.querySelector('.home')
 const hero = document.querySelector('.hero')
@@ -12,13 +13,12 @@ let heroPosition = base.id
 let gameActive = false
 let dieVal = 0
 
-
-//throwDie function
+//throwDie function, to be invoked each time the "die" is clicked
 function throwDie () {
   dieVal = Math.ceil(Math.random() * 6)
 }
 
-//startJourney which handles getting the hero moving on the path
+//startJourney which handles getting the hero moving on the first path tile
 function startJourney() {
   if (dieVal === 6) {
     let child = base.removeChild(hero)
@@ -42,7 +42,7 @@ function resetJourney() {
 }
 
 //movements
-//moveBack
+  //moveBack
 function moveBack() {
   if (!gameActive) {
     return
@@ -64,7 +64,7 @@ function moveBack() {
   }  
 }
 
-//moveForward
+  //moveForward
 function moveForward(dieVal) {
   if (!gameActive) {
     return
@@ -125,8 +125,7 @@ function moveForward(dieVal) {
   }
 }
 
-
-//actual movement logic handler
+//game logic handler
 function journey () {
   throwDie()
 
@@ -141,13 +140,10 @@ function journey () {
   }
 }
 
-
-
 //event listeners
 startButton.addEventListener('click', function() {
   resetJourney()
 })
-
 
 die.addEventListener('click', function() {
   journey()

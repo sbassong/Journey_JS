@@ -4,7 +4,7 @@
 
 ### By: Sam Bassong
 
-#### [Trello](https://trello.com/b/z62FupYw/journeyjs) | [Journey](gameURL)
+#### [Trello](https://trello.com/b/z62FupYw/journeyjs) | [Journey](https://journey-js.surge.sh/)
 ***
 
 ### ***Description***
@@ -38,7 +38,7 @@
 ### ***Screenshots***
 
 ##### Journey board
-![gameboard](https://img.etimg.com/photo/msid-66600918,quality-100/ludo.jpg)
+![gameboard](/Users/Sam/ga_seir/projects/Journey_JS/theme_images/homeScreen.png)
 ***
 
 ### ***Credits***
