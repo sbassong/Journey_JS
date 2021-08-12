@@ -57,7 +57,9 @@ function moveBack() {
       let child = document.getElementById(heroPosition).removeChild(hero)
       base.appendChild(child)
       heroPosition = base.id
+      gameActive = false
       messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
+
     }
   }  
 }
@@ -67,66 +69,60 @@ function moveForward(dieVal) {
   if (!gameActive) {
     return
   } else {
-    if (hero.parentElement.id <= 33) {
+    if (hero.parentElement.id >= 33) {
+      if (heroPosition >= 33 && dieVal === 6) {
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else if (heroPosition >= 34 && dieVal >= 5) {
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else if (heroPosition >= 35 && dieVal >= 4) {
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else if (heroPosition >= 36 && dieVal >= 3) {
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else if (heroPosition >= 37 && dieVal >= 2) {
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else if (heroPosition >= 38 && dieVal >= 1){
+        let child = document.getElementById(heroPosition).removeChild(hero)
+        home.appendChild(child)
+        heroPosition = home.id
+        messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
+        gameActive = false
+      } else {
+        let curPosition = hero.parentElement
+        let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
+        let child = curPosition.removeChild(hero)
+        nextPosition.appendChild(child)
+        heroPosition = nextPosition.id
+        messageDiv.innerText = `You move forward ${dieVal} tiles. Almost there!`
+      }
+    } else {
       let curPosition = hero.parentElement
       let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
       let child = curPosition.removeChild(hero)
       nextPosition.appendChild(child)
       heroPosition = nextPosition.id
       messageDiv.innerText = `You move forward ${dieVal} tiles. Keep it up!`
-    } else {
-      moveHome()
     }
   }
-}
-
-//moveHome which handles cases where the hero is 6 tiles away from home.
-function moveHome() {
-  if (heroPosition >= 33 && dieVal === 6) {
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else if (heroPosition >= 34 && dieVal >= 5) {
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else if (heroPosition >= 35 && (dieVal >= 4)) {
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else if (heroPosition >= 36 && dieVal >= 3) {
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else if (heroPosition >= 37 && dieVal >= 2) {
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else if (heroPosition >= 38 && dieVal >= 1){
-    let child = document.getElementById(heroPosition).removeChild(hero)
-    home.appendChild(child)
-    heroPosition = home.id
-    messageDiv.innerText = `You completed Journey and made it home. Congratulations!`
-    gameActive = false
-  } else {
-    let curPosition = hero.parentElement
-    let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
-    let child = curPosition.removeChild(hero)
-    nextPosition.appendChild(child)
-    heroPosition = nextPosition.id
-    messageDiv.innerText = `You move forward ${dieVal} tiles. Almost there!`
-  }
-  
 }
 
 
