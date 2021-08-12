@@ -7,37 +7,34 @@ body {
 
   font-family: 'Sacramento', cursive;
   text-align: center;
+
+  box-sizing: border-box;
 }
 
   .header {
-    font-size: 200px;
+    font-size: 170px;
     font-weight: bold;
-    /* margin: 30px; */
     padding: 20px;
   }
 
   .welcome-menu {
     flex-direction: column;
-    border: 4px solid black;
+    border: 5px solid black;
     border-radius: 12.5px;
     width: 50%;
     margin: 0 auto;
     padding: 0 10px;
   }
 
-    h1 {
-      font-size: 40px;
-    }
-
     .parent-p {
-      font-size: 25px;
+      font-size: 30px;
     }
       p {
-        font-size: 20px;
+        font-size: 25px;
       }
     
     .start-game {
-      border: 2px solid black;
+      border: 3px solid black;
       border-radius: 12.5px;
       background-color: transparent;
       height: 50px;
@@ -47,5 +44,6 @@ body {
         text-decoration: none;
         color: black;
         font-family: 'Sacramento', cursive;
-        font-size: 25px;
+        font-size: 30px;
+        font-weight: bolder;
       }
