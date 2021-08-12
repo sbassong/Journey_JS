@@ -140,6 +140,12 @@ function journey () {
   }
 }
 
+//sand pit trap idea
+//want to generate 3ish trap on 3 divs
+// if hero steps on trap, they have to throw a six to get out
+// they get 3 tries, otherwise they get sent home
+
+
 //event listeners
 startButton.addEventListener('click', function() {
   resetJourney()
