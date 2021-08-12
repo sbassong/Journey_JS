@@ -18,8 +18,10 @@ body {
 
 .game {
   margin: 10px;
-  border: 1px white solid;
-  display: block;
+  border: 3px rgb(43, 18, 43)  solid;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
       .game-board {

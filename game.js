@@ -126,6 +126,7 @@ function moveHome() {
     heroPosition = nextPosition.id
     messageDiv.innerText = `You move forward ${dieVal} tiles. Almost there!`
   }
+  
 }
 
 
