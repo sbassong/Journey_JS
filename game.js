@@ -32,7 +32,7 @@ function startJourney() {
   }  
 }
 
-//resetJourney which resets current journey to base
+//resetJourney which resets current journey.
 function resetJourney() {
   gameActive = false
   dieVal = 0
@@ -59,7 +59,6 @@ function moveBack() {
     messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
   }
 }
-
   //moveForward
 function moveForward(dieVal) {
   if (!gameActive) {
@@ -162,14 +161,27 @@ function fallIn () {
   }
 }
 
+//unlock ending
+// if heroPosition = home.id, gameActive = false,
+//e.target.innerHTML = gfdg
+function unlockEnd (e) {
+  if (heroPosition === home.id && !gameActive) {
+    let target = e.target
+    target.parentElement.innerHTML = '<a href="end.html"><img src="die_images/cut-silver-die.png" alt="die"></a>'
+  } else {
+    return
+  }
+}
+
 //event listeners
 startButton.addEventListener('click', function() {
   resetJourney()
 })
 
-die.addEventListener('click', function() {
+die.addEventListener('click', function(e) {
   journey()
   fallIn()
+  unlockEnd(e)
 })
 
 window.addEventListener('DOMContentLoaded', function() {
