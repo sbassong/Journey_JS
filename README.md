@@ -4,11 +4,11 @@
 
 ### By: Sam Bassong
 
-#### [Trello](https://trello.com/b/z62FupYw/journeyjs) | [Journey](https://journey-js.surge.sh/)
+####  [Journey](https://journey-js.surge.sh/) | [GitHub](https://github.com/sbassong) | [LinkedIn](https://www.linkedin.com/in/sambassong/)
 ***
 
 ### ***Description***
-####  Journey is a short dice-movement based adventure game in which the hero's luck guides them through perils on their journey home. It is loosely based on the game Ludo. This gane was implemented using Javascript, HTML, CSS and deployed with Surge. This is the first project for Software Engineering Immersive @ General Assembly.
+####  Journey is a short dice-movement based adventure game in which the hero's luck guides them through perils on their journey home. It draws inspiration from the popular board game Ludo. This gane was implemented using Javascript, HTML, CSS and deployed with Surge. This is the first major project for Software Engineering Immersive @ General Assembly.
 ***
 
 ### ***Technologies Used***
@@ -21,32 +21,32 @@
 ### ***Getting Started***
 
 #### 
-* Read about the story background.
-* Once ready, press the "Start" button.
-* Click on the die to start
+* Read about the story/premise.
+* Once ready, click the "Start Journey" button.
+* Click on the die to start. You must roll a 6 to start your travels.
+* Win the game to unlock the epilogue.
 * Enjoy yourself!
 ***
 
 ### ***Future Updates***
 
 - [ ] Implement additional hero choice
-- [ ] add a dark mode feature
+- [ ] Add more levels and obstacles
 - [ ] Add sound effects for various actions
-- [ ] Implement a theme (board, pawns, die)
+- [ ] Implement more player interactivity
 ***
 
 ### ***Screenshots***
 
-##### Journey board
-![gameboard](/Users/Sam/ga_seir/projects/Journey_JS/theme_images/homeScreen.png)
+##### Journey homepage
+![gameboard](https://i.imgur.com/z8QRK4Bl.png)
+
+##### Journey gameboard
+![gameboard](https://i.imgur.com/FoJrxN0l.png)
 ***
 
 ### ***Credits***
-
-#### Instructions: [CoolMathGames](https://www.coolmathgames.com/0-ludo)
-
-#### pictures: [DuckDuckGo Search](http://www.duckduckgo.com)
-
+#### Support and Help: SEI-DRY @ GA
+#### Pictures: [DuckDuckGo Search](http://www.duckduckgo.com)
 #### Die animation: [ClipArt](http://www.clipartbest.com/clipart-acq6e87oi)
 #### Background: [Wallpapersden](https://wallpapersden.com/desert-sun-day-minimalism-wallpaper/3840x2400/)
-#### Future Credits:
