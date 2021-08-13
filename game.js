@@ -7,6 +7,7 @@ const pits = document.querySelectorAll('.pit')
 const die = document.querySelector('.die')
 const startButton = document.querySelector('.new-game-button')
 const messageDiv = document.querySelector('.message')
+messageDiv.innerText = 'Click the artifact below to try your luck...'
 const p1 = document.getElementById('1')
 
 //game state
@@ -39,7 +40,7 @@ function resetJourney() {
   let child = document.getElementById(hero.parentElement.id).removeChild(hero)
   base.appendChild(child)
   heroPosition = base.id
-  messageDiv.innerText = ''
+  messageDiv.innerText = 'Click the artifact below to try your luck...'
 }
 
 //movements
@@ -64,38 +65,38 @@ function moveForward(dieVal) {
   if (!gameActive) {
     return
   } else {
-    if (hero.parentElement.id >= 33) {
-      if (heroPosition >= 33 && dieVal === 6) {
+    if (hero.parentElement.id >= 47) {
+      if (heroPosition >= 47 && dieVal === 6) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
         messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
-      } else if (heroPosition >= 34 && dieVal >= 5) {
+      } else if (heroPosition >= 48 && dieVal >= 5) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
         messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
-      } else if (heroPosition >= 35 && dieVal >= 4) {
+      } else if (heroPosition >= 49 && dieVal >= 4) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
         messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
-      } else if (heroPosition >= 36 && dieVal >= 3) {
+      } else if (heroPosition >= 50 && dieVal >= 3) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
         messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
-      } else if (heroPosition >= 37 && dieVal >= 2) {
+      } else if (heroPosition >= 51 && dieVal >= 2) {
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id
         messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
         gameActive = false
-      } else if (heroPosition >= 38 && dieVal >= 1){
+      } else if (heroPosition >= 52 && dieVal >= 1){
         let child = document.getElementById(heroPosition).removeChild(hero)
         home.appendChild(child)
         heroPosition = home.id

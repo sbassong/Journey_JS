@@ -15,10 +15,11 @@ body {
     font-size: 170px;
     font-weight: bold;
     padding: 20px;
+    color: rgb(43, 18, 43);
   }
 
   .welcome-menu {
-    border: 5px solid black;
+    border: 5px solid rgb(43, 18, 43);
     border-radius: 12.5px;
     width: 60%;
     margin: 50px auto;
@@ -33,7 +34,7 @@ body {
       }
     
     .start-game {
-      border: 3px solid black;
+      border: 3px solid rgb(43, 18, 43);
       border-radius: 12.5px;
       background-color: transparent;
       height: 50px;
@@ -41,7 +42,7 @@ body {
     }
       a {
         text-decoration: none;
-        color: black;
+        color: rgb(43, 18, 43);
         font-family: 'Sacramento', cursive;
         font-size: 30px;
         font-weight: bolder;
