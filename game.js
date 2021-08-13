@@ -138,14 +138,13 @@ function journey () {
   }
 }
 
-
 //sand pit mechanic
 //want to generate 3ish trap on 3 divs
 function makePits () {
   pits.forEach( pit => {
   const sandPit = document.createElement('img')
   sandPit.className = 'pit-img'
-  sandPit.src = '/Users/Sam/ga_seir/projects/Journey_JS/theme_images/pit_trap.jpeg'
+  sandPit.src = 'https://i.imgur.com/z3ao0ih.jpg'
   pit.appendChild (sandPit)
   })
 }

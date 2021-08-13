@@ -1,21 +1,32 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Sacramento', cursive;
+  text-align: center;
+  color: rgb(43, 18, 43);
+}
+
 body {
   height: 100vh;
   background-image: url('theme_images/welcome-img.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  font-family: 'Sacramento', cursive;
-  text-align: center;
-
-  box-sizing: border-box;
 }
 
   .header {
     font-size: 170px;
     font-weight: bold;
     padding: 20px;
-    color: rgb(43, 18, 43);
+  }
+
+  .title {
+    font-size: 50px;
+    padding: 10px;
+  }
+
+  .epilogue {
+    font-size: 100px;
+    padding: 10px;
   }
 
   .welcome-menu {
@@ -28,17 +39,20 @@ body {
 
     .parent-p {
       font-size: 40px;
+      font-weight: bold;
     }
+
       p {
         font-size: 35px;
       }
     
-    .start-game {
+    .start-game, .play-again {
       border: 3px solid rgb(43, 18, 43);
       border-radius: 12.5px;
       background-color: transparent;
       height: 50px;
       margin-bottom: 10px;
+      flex-direction: row;
     }
       a {
         text-decoration: none;
@@ -47,3 +61,21 @@ body {
         font-size: 30px;
         font-weight: bolder;
       }
+      
+    .end-p {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .end-img {
+      max-height: 300px;
+      max-width: 300px;
+      border: 2px solid rgb(43, 18, 43);
+      border-radius: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around ;
+      margin: 2px auto;
+    }

@@ -54,10 +54,18 @@ body {
       background: linear-gradient(to right, rgba(238,174,202,1) 0%, rgb(195, 155, 221) 100%);
       border-image-slice: 1;
       border-radius: inherit;
-      height: 100px;
-      width: 100px;
-      z-index: -200;
+      height: 75px;
+      width: 75px;
+      margin: 1px;
+      position: relative;
     } 
+
+    
+    .base,
+    .home {
+      background: transparent;
+      position: relative;
+    }
       
     .pit-img {
       border-radius: 10px;
@@ -67,11 +75,15 @@ body {
 
       .hero {
         background-image: url(https://i.imgur.com/tRxbS89s.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
         display: inline-block;
         height: 90%;
         width: 90%;
         border-radius: 50%;
         margin: 5px;
+        z-index: 10;
+        opacity: 1;
       }
 
   .menu-board {
@@ -126,5 +138,24 @@ body {
         font-weight: bolder;
       }
 
+      .base-img img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -5;
+        opacity: 0.9;
+      }
+
+      .home-img img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -5;
+        opacity: 0.9;
+      }
 
 
