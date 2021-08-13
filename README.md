@@ -42,7 +42,7 @@
 ![gameboard](https://i.imgur.com/z8QRK4Bl.png)
 
 ##### Journey gameboard
-![gameboard](https://i.imgur.com/FoJrxN0l.png)
+![gameboard](https://i.imgur.com/9qQdXe8l.png)
 ***
 
 ### ***Credits***

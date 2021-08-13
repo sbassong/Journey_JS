@@ -33,7 +33,7 @@ function startJourney() {
   }  
 }
 
-//resetJourney which resets current journey.
+//resetJourney which resets current journey/state.
 function resetJourney() {
   gameActive = false
   dieVal = 0
@@ -44,7 +44,7 @@ function resetJourney() {
 }
 
 //movements
-  //moveBack
+  //moveBack: handles hero rolling 3
 function moveBack() {
   if (heroPosition > 3) {
     let child = document.getElementById(heroPosition).removeChild(hero)
@@ -60,48 +60,33 @@ function moveBack() {
     messageDiv.innerText = `Uh oh, you rolled a trouble ${dieVal}. You move back to base. Hang in there!`
   }
 }
-  //moveForward
+//moveHome: which handles cases where hero is near home
+function moveHome (heroPosition) {
+  let child = document.getElementById(heroPosition).removeChild(hero)
+  home.appendChild(child)
+  heroPosition = home.id
+  messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
+  gameActive = false
+  unlockEnd()
+}
+  //moveForward: gets hero moving on the board based on rolls
 function moveForward(dieVal) {
   if (!gameActive) {
     return
   } else {
     if (hero.parentElement.id >= 47) {
       if (heroPosition >= 47 && dieVal === 6) {
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else if (heroPosition >= 48 && dieVal >= 5) {
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else if (heroPosition >= 49 && dieVal >= 4) {
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else if (heroPosition >= 50 && dieVal >= 3) {
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else if (heroPosition >= 51 && dieVal >= 2) {
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else if (heroPosition >= 52 && dieVal >= 1){
-        let child = document.getElementById(heroPosition).removeChild(hero)
-        home.appendChild(child)
-        heroPosition = home.id
-        messageDiv.innerText = `You made it home! Click on the die again for the epilogue.`
-        gameActive = false
+        moveHome(heroPosition)
       } else {
         let curPosition = hero.parentElement
         let nextPosition = document.getElementById(`${parseInt(curPosition.id) + dieVal}`)
@@ -139,7 +124,7 @@ function journey () {
 }
 
 //sand pit mechanic
-//want to generate 3ish trap on 3 divs
+  //generate pits on the map.
 function makePits () {
   pits.forEach( pit => {
   const sandPit = document.createElement('img')
@@ -148,7 +133,7 @@ function makePits () {
   pit.appendChild (sandPit)
   })
 }
-//fallIn function which sends hero to base when they step on pit.
+  //fallIn: handles hero stepping on pit.
 function fallIn () {
   if (!hero.parentElement.classList.contains('pit')) {
     return
@@ -161,7 +146,7 @@ function fallIn () {
   }
 }
 
-//unlock ending, sends winning hero to epilogue's page
+//unlockEnd sends winning hero to epilogue's page
 function unlockEnd (e) {
   if (heroPosition === home.id && !gameActive) {
     let target = e.target
@@ -178,7 +163,6 @@ startButton.addEventListener('click', function() {
 
 die.addEventListener('click', function(e) {
   journey()
-  fallIn()
   unlockEnd(e)
 })
 
