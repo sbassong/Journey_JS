@@ -1,10 +1,9 @@
 # Journey_JS
 
-## Date: 8/9/2021
-
 ### By: Sam Bassong
 
-####  [Journey](https://journey-js.surge.sh/) | [GitHub](https://github.com/sbassong) | [LinkedIn](https://www.linkedin.com/in/sambassong/)
+#### [Portfolio](https://www.sambassong.com/) | [GitHub](https://github.com/sbassong) | [LinkedIn](https://www.linkedin.com/in/sambassong/)
+#### Date: 8/9/2021
 ***
 
 ### ***Description***
